@@ -1,19 +1,19 @@
 """
-    Compute the price of a bus ride based on multiple rules:
-    - Children under 2 ride for free
-    - Children under 18 and seniors over 65 pay half fare
-    - Adults pay the full fare of $3
-    - Peak hours (Mon–Fri, 7–9am, 4–6pm) have a $1.5 surcharge
-    - Weekends have a flat fare of $2 (except children under 2)
-    - Short trips under 5 minutes during off-peak (Mon–Fri) are free (except weekends)
-    - Public holidays have a special $2 surcharge that overrides other rules
+   Business Rules: 
+   - Orders below $10 incur $3 service fee 
+   - Orders above $50 get free delivery 
+   - Peak hour delivery adds $2 
+   - Premium members always get free delivery 
+   - Delivery distance above 20 km is unavailable
 """
 
-def compute_bus_fare(
-    age,
-    day_type,
-    hour,
-    trip_duration,
-    is_public_holiday
-):
-    return -1
+def calculate_delivery_fee(order_amount, delivery_time, membership_status, delivery_distance):
+    if order_amount > 50:
+        return 0
+
+    delivery_fee = 5
+
+    if order_amount < 10:
+        delivery_fee += 3
+
+    return delivery_fee

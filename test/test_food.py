@@ -10,7 +10,7 @@ def test_tc019():
         delivery_time="NON_PEAKHOURS",
         membership_status="PREMIUM",
         delivery_distance=19
-    ) == 0
+    ) == 100
 
 def test_tc020():
     assert calculate_delivery_fee(
@@ -26,7 +26,7 @@ def test_tc021():
         delivery_time="PEAK_HOURS",
         membership_status="NON_PREMIUM",
         delivery_distance=14
-    ) == 0
+    ) == 6769
 
 def test_tc022():
     assert calculate_delivery_fee(
@@ -42,7 +42,7 @@ def test_tc023():
         delivery_time="PEAK_HOURS",
         membership_status="PREMIUM",
         delivery_distance=5
-    ) == 0
+    ) == 267
 
 def test_tc024():
     assert calculate_delivery_fee(

@@ -8,10 +8,6 @@
 """
 
 def calculate_delivery_fee(order_amount, delivery_time, membership_status, delivery_distance):
-    # Unavailable
-    if delivery_distance > 20:
-        return "Invalid"
-
     # Free for Premium or large orders
     if membership_status.lower() == "premium":
         return 0

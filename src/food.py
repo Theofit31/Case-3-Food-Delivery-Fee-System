@@ -9,11 +9,23 @@
     - Public holidays have a special $2 surcharge that overrides other rules
 """
 
-def compute_bus_fare(
-    age,
-    day_type,
-    hour,
-    trip_duration,
-    is_public_holiday
-):
-    return -1
+def calculate_delivery_fee(order_amount, delivery_time, membership_status, delivery_distance):
+    delivery_fee = 10000
+
+    # Distance
+    if delivery_distance > 5:
+        delivery_fee += (delivery_distance - 5) * 2000
+
+    # Peak time
+    if delivery_time.lower() == "peak":
+        delivery_fee += 5000
+
+    # Premium
+    if membership_status.lower() == "premium":
+        delivery_fee *= 0.8  # diskon 20%
+
+    # Free Delivery 
+    if order_amount >= 200000:
+        delivery_fee = 0
+
+    return delivery_fee

@@ -56,6 +56,15 @@ def test_tc006_peak_non_premium_invalid_distance():
     ) == "Invalid"
 
 
+#region TC013 - TC018
+def test_tc013():
+    assert calculate_delivery_fee(
+        order_amount=39,
+        delivery_time="PEAK_HOURS",
+        membership_status="NON_PREMIUM",
+        delivery_distance=17
+    ) == 41
+
 #region TC019 - TC024
 def test_tc019():
     assert calculate_delivery_fee(

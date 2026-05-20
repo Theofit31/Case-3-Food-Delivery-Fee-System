@@ -2,6 +2,15 @@ import pytest
 from src.food import calculate_delivery_fee
 
 
+def test_tc013():
+    assert calculate_delivery_fee(
+        order_amount=39,
+        delivery_time="PEAK_HOURS",
+        membership_status="NON_PREMIUM",
+        delivery_distance=17
+    ) == 41
+
+
 
 #region TC019 - TC024
 def test_tc019():

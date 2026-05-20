@@ -14,6 +14,18 @@ def Test_TC_009():
     # Test case for orders at $10 with non-peak hours, non-premium membership, and distance 20
     assert calculate_delivery_fee(10, "non-peak", "non-premium", 20) == 10
 
+def Test_TC_010():
+    # Test case for orders at $13 with non-peak hours, non-premium membership, and distance 25
+    assert calculate_delivery_fee(13, "non-peak", "non-premium", 25) == "Invalid"
+
+def Test_TC_011():
+    # Test case for orders at $16 with non-peak hours, premium membership, and distance 12
+    assert calculate_delivery_fee(16, "non-peak", "premium", 12) == 16
+
+def Test_TC_012():
+    # Test case for orders at $28 with non-peak hours, premium membership, and distance 40
+    assert calculate_delivery_fee(28, "non-peak", "premium", 40) == "Invalid"
+from src.food import calculate_delivery_fee
 
 # Region TC001 - TC006
 def test_tc001_non_peak_non_premium():

@@ -8,6 +8,10 @@
 """
 
 def calculate_delivery_fee(order_amount, delivery_time, membership_status, delivery_distance):
+    # Free for Premium or large orders
+    if membership_status.lower() == "premium":
+        return 0
+
     if order_amount > 50:
         return 0
 
@@ -15,5 +19,9 @@ def calculate_delivery_fee(order_amount, delivery_time, membership_status, deliv
 
     if order_amount < 10:
         delivery_fee += 3
+
+    # Peak hour 
+    if delivery_time.lower() == "peak":
+        delivery_fee += 2
 
     return delivery_fee

@@ -80,6 +80,14 @@ def test_tc015():
         delivery_distance=5
     ) == 47
 
+def test_tc016():
+    assert calculate_delivery_fee(
+        order_amount=50,
+        delivery_time="PEAK_HOURS",
+        membership_status="PREMIUM",
+        delivery_distance=25
+    ) == "Invalid"
+
 #region TC019 - TC024
 def test_tc019():
     assert calculate_delivery_fee(

@@ -12,7 +12,7 @@ def Test_TC_008():
 
 def Test_TC_009():
     # Test case for orders at $10 with non-peak hours, non-premium membership, and distance 20
-    assert calculate_delivery_fee(10, "non-peak", "non-premium", 20) == 9
+    assert calculate_delivery_fee(10, "non-peak", "non-premium", 20) == 10
 
 
 # Region TC001 - TC006

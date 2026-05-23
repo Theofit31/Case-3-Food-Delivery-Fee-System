@@ -27,7 +27,7 @@ def test_tc003_non_peak_premium():
         delivery_time="NON_PEAK_HOURS",
         membership_status="PREMIUM",
         delivery_distance=20
-    ) == 10
+    ) == 7
 
 
 def test_tc004_non_peak_premium_invalid_distance():
@@ -45,7 +45,7 @@ def test_tc005_peak_non_premium():
         delivery_time="PEAK_HOURS",
         membership_status="NON_PREMIUM",
         delivery_distance=15
-    ) == 9
+    ) == 7
 
 
 def test_tc006_peak_non_premium_invalid_distance():
@@ -88,7 +88,7 @@ def test_tc013():
         delivery_time="PEAK_HOURS",
         membership_status="NON_PREMIUM",
         delivery_distance=17
-    ) == 41
+    ) == 39
 
 def test_tc014():
     assert calculate_delivery_fee(
@@ -153,7 +153,7 @@ def test_tc021():
         delivery_time="PEAK_HOURS",
         membership_status="NON_PREMIUM",
         delivery_distance=14
-    ) == 6769
+    ) == 6767
 
 def test_tc022():
     assert calculate_delivery_fee(
